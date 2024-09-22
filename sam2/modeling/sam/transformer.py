@@ -17,8 +17,11 @@ from sam2.modeling.position_encoding import apply_rotary_enc, compute_axial_cis
 from sam2.modeling.sam2_utils import MLP
 from sam2.utils.misc import get_sdp_backends
 
+
 warnings.simplefilter(action="ignore", category=FutureWarning)
-# OLD_GPU, USE_FLASH_ATTN, MATH_KERNEL_ON = get_sdpa_settings()
+USE_FLASH_ATTN = False
+MATH_KERNEL_ON = True
+OLD_GPU = True
 
 
 class TwoWayTransformer(nn.Module):
